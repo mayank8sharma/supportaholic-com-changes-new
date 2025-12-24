@@ -309,6 +309,11 @@ body.nav-active {
   font-size: var(--fontSize-title-2);
 }
 
+.title-2a {
+  color: var(--white);
+  font-size: var(--fontSize-title-2);
+}
+
 .title-3 {
   font-size: var(--fontSize-title-3);
 }
@@ -1373,6 +1378,7 @@ body.nav-active {
   display: flex;
   align-items: flex-start;
   gap: 20px;
+  
 }
 
 .hover\:card .card-banner {
@@ -1391,6 +1397,7 @@ body.nav-active {
 .menu-card .card-banner {
   flex-shrink: 0;
   border-radius: var(--radius-24);
+  
 }
 
 .menu-card .card-title {
