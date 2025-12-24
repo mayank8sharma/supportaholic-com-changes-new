@@ -185,6 +185,7 @@ html {
 
 body {
   background-color: var(--quick-silver);
+  /* color: var(--white); */
   color: var(--black-alpha-80);
   font-family: var(--fontFamily-dm_sans);
   font-size: var(--fontSize-body-4);
@@ -835,7 +836,8 @@ body.nav-active {
 
 .navbar {
   position: fixed;
-  background-color: var(--smoky-black-1);
+  background-color: var(--dark-crayola);
+  color: var(--white); /* changes to white*/
   top: 0;
   left: -360px;
   bottom: 0;
@@ -883,6 +885,7 @@ body.nav-active {
 }
 
 .navbar-item {
+  color: var(--white);  /* new change to whtite */
   border-block-start: 1px solid var(--white-alpha-20);
 }
 
@@ -1044,6 +1047,7 @@ body.nav-active {
 
 .hero-text {
   margin-block: 10px 40px;
+  color: var(--gold-crayola); /* change for new teme */
 }
 
 .hero .btn {
