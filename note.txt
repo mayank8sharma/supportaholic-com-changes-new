@@ -1,0 +1,10 @@
+remove header 1a and header 1b for about us section 
+
+
+slider work
+
+about us change
+
+event page sepration
+
+our team page changes to testimonials
