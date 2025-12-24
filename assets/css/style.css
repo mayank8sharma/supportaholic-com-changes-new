@@ -1866,6 +1866,7 @@ textarea.input-field {
   .topbar {
     display: block;
     position: fixed;
+    color: var(--white);
     top: 0;
     left: 0;
     width: 100%;
