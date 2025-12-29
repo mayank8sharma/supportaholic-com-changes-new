@@ -184,7 +184,7 @@ html {
 }
 
 body {
-  background-color: var(--quick-silver);
+  background-color: var(--white);
   /* color: var(--white); */
   color: var(--black-alpha-80);
   font-family: var(--fontFamily-dm_sans);
@@ -196,7 +196,11 @@ body {
 }
 
 body.loaded {
-  overflow: overlay;
+  /* overflow: overlay; */
+
+  /* change if needed */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body.nav-active {
@@ -1587,11 +1591,11 @@ textarea.input-field {
 }
 
 .feature-item:nth-child(2n+1) .feature-card {
-  background-color: var(--light-mode-grey);
+  background-color: var(--dark-crayola);
 }
 
 .feature-item:nth-child(2n) .feature-card {
-  background-color: var(--new-light-mode);
+  background-color: var(--gold-crayola);
 }
 
 .feature-card .card-icon {
@@ -2665,7 +2669,25 @@ textarea.input-field {
   width: 100%;
 }
 
+.brand-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .brand-slider .swiper-slide img {
+  max-width: 120px;
   width: 100%;
   height: auto;
+}
+.swiper-slide {
+  background: #ddd;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-slider img {
+  display: inline-block;
 }
