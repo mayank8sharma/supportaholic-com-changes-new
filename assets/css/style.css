@@ -2692,3 +2692,127 @@ textarea.input-field {
 .brand-slider img {
   display: inline-block;
 }
+
+/* Why supportaholic */
+/* Menu Card as Light Blue Box */
+.menu .grid-list li .menu-card {
+  background: #f5f9ff; /* very light blue */
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 8px 22px rgba(0, 90, 200, 0.08);
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect (professional, subtle) */
+.menu .grid-list li .menu-card:hover {
+  background: #eef5ff;
+  box-shadow: 0 12px 30px rgba(0, 90, 200, 0.12);
+  transform: translateY(-3px);
+}
+
+.menu .card-banner {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
+}
+
+.menu .card-title {
+  color: #0a2540;
+  font-weight: 600;
+  /* font-size: 1.05rem; */
+  text-decoration: none;
+}
+
+.menu .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu .span.title-2 {
+  background: #e3edff;
+  color: #1a56db;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.menu .card-text {
+  margin-top: 8px;
+  /* font-size: 0.95rem; */
+  line-height: 1.6;
+  color: #425466;
+}
+
+.menu .grid-list::before {
+  display: none;
+}
+
+.service .grid-list li:nth-child(2n+1) {
+  transform: translateY(-80px); /* was -160px */
+}
+
+@media (max-width: 768px) {
+  .menu .grid-list li .menu-card {
+    padding: 18px;
+  }
+
+  .service .grid-list li:nth-child(2n+1) {
+    transform: none;
+  }
+}
+
+/* Animation  */
+/* Initial hidden state */
+.menu .grid-list li {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+/* Active animation states */
+.menu .grid-list li.animate-left {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.menu .grid-list li.animate-right {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+/* Keyframes */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .menu .grid-list li {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
