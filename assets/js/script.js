@@ -174,3 +174,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Menu Navigation services dropdown 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownMenu = document.querySelector(".dropdown-menu");
+
+  if (!dropdownToggle || !dropdownMenu) return;
+
+  dropdownToggle.addEventListener("click", function (e) {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      dropdownMenu.classList.toggle("open");
+    }
+  });
+});
