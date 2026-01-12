@@ -165,42 +165,47 @@
                         </a>
                     </li>
 
-                    <li class="navbar-item dropdown">
+                <li class="navbar-item mega-menu">
 
-                    <a href="services.html" class="navbar-link hover-underline dropdown-toggle">
-                        <div class="separator"></div>
-                        <span class="span">Services</span>
-                        <span class="dropdown-arrow">▾</span>
-                    </a>
+  <button class="navbar-link hover-underline mega-toggle"
+          type="button"
+          aria-expanded="false">
+    <div class="separator"></div>
+    <span class="span">Services</span>
+  </button>
 
-                    <ul class="dropdown-menu">
+  <div class="mega-panel">
 
-                        <!-- IT SERVICES -->
-                        <li class="dropdown-group">
-                        <span class="dropdown-title">IT Services</span>
-                        <a href="/service-application-web-development.html">Application & Web Development</a>
-                        <a href="./service-crm-erp-services.html">CRM & ERP Services</a>
-                        <a href="./service-ecommerce-digital-market.html">E-Commerce & Digital Marketing</a>
-                        </li>
+    <div class="mega-left">
+      <button class="mega-tab active" data-target="it">IT Services</button>
+      <button class="mega-tab" data-target="staffing">Staffing Services</button>
+      <button class="mega-tab" data-target="outsourcing">Outsourcing & Offshoring</button>
+    </div>
 
-                        <!-- STAFFING SERVICES -->
-                        <li class="dropdown-group">
-                        <span class="dropdown-title">Staffing Services</span>
-                        <a href="/service11-it-staffing-services.html">IT Staffing Services</a>
-                        <a href="./services12-healthcare-staffing.html">Healthcare Staffing Solution</a>
-                        <a href="./service10-us-staffing.html">US Staffing</a>
-                        </li>
+    <div class="mega-right">
+      <div class="mega-content active" id="it">
+        <a href="./service-application-web-development.html">Application & Web Development</a>
+        <a href="./service-crm-erp-services.html">CRM & ERP Services</a>
+        <a href="./service-ecommerce-digital-market.html">E-Commerce & Digital Marketing</a>
+      </div>
 
-                        <!-- OUTSOURCING -->
-                        <li class="dropdown-group">
-                        <span class="dropdown-title">Outsourcing & Offshoring</span>
-                        <a href="./service6-chat-support.html">24×7 Customer Support</a>
-                        <a href="./service6-chat-support.html">Chat Support</a>
-                        <a href="./service9-data-entry.html">Data Entry & Management</a>
-                        </li>
+      <div class="mega-content" id="staffing">
+        <a href="./service11-it-staffing-services.html">IT Staffing Services</a>
+        <a href="./services12-healthcare-staffing.html">Healthcare Staffing Solution</a>
+        <a href="./service10-us-staffing.html">US Staffing</a>
+      </div>
 
-                    </ul>
-                    </li>
+      <div class="mega-content" id="outsourcing">
+        <a href="./service6-chat-support.html">24×7 Customer Support</a>
+        <a href="./service6-chat-support.html">Chat Support</a>
+        <a href="service-data-entry.html">Data Entry & Management</a>
+      </div>
+    </div>
+
+  </div>
+</li>
+
+
 
 
                     <li class="navbar-item">
@@ -220,7 +225,7 @@
                     </li>
 
                     <li class="navbar-item">
-                        <a href="contact.html" class="navbar-link hover-underline">
+                        <a href="contact.html#contact" class="navbar-link hover-underline">
                             <div class="separator"></div>
 
                             <span class="span">Contact</span>
@@ -300,7 +305,7 @@
                             We help U.S. businesses modernize applications, improve system performance, and streamline operations through ERP, CRM,<br> and secure web & application development.
                         </p>
 
-                        <a href="contact.html" class="btn btn-primary slider-reveal">
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
                             <span class="text text-1">Contact Us</span>
 
                             <span class="text text-2" aria-hidden="true">Contact Us</span>
@@ -325,7 +330,7 @@
                            From IT professionals to compliance-ready healthcare staff, we deliver skilled talent through contract, <br> contract-to-hire, and direct hire models—when and where you need them.
                         </p>
 
-                        <a href="contact.html" class="btn btn-primary slider-reveal">
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
                             <span class="text text-1">Contact Us</span>
 
                             <span class="text text-2" aria-hidden="true">Contact Us</span>
@@ -350,10 +355,10 @@
                             Our SLA-driven managed IT support and service desk solutions keep your systems running with L1–L3 <br> support, 24×5 or 24×7 coverage, and predictable performance.
                         </p>
 
-                        <a href="contact.html" class="btn btn-primary slider-reveal">
-                            <span class="text text-1">View Our Client</span>
+                        <a href="services.html" class="btn btn-primary slider-reveal">
+                            <span class="text text-1">Read More</span>
 
-                            <span class="text text-2" aria-hidden="true">View Our Client</span>
+                            <span class="text text-2" aria-hidden="true">Read More</span>
                         </a>
 
                     </li>
@@ -368,7 +373,7 @@
                     <ion-icon name="chevron-forward"></ion-icon>
                 </button>
 
-                <a href="contact.html" class="hero-btn has-after">
+                <a href="contact.html#contact" class="hero-btn has-after">
                     <img src="./assets/images/hero-icon.png" width="48" height="48" alt="booking icon">
 
                     <span class="label-2 text-center span">Request a Callback</span>
@@ -1012,7 +1017,7 @@ Every solution is designed to deliver measurable outcomes such as faster deliver
 
                     </ul>
 
-                     <a href="contact.html" class="btn btn-primary">
+                     <a href="contact.html#contact" class="btn btn-primary">
                     <span class="text text-1">Contact Us</span>
 
                     <span class="text text-2" aria-hidden="true">Contact Us</span>
@@ -1036,8 +1041,6 @@ Every solution is designed to deliver measurable outcomes such as faster deliver
 
                         <li class="feature-item">
                             <div class="feature-card">
-
-                              
 
                                 <h3 class="title-2 card-title">Expertise and Innovation</h3>
 
@@ -1296,7 +1299,7 @@ Every solution is designed to deliver measurable outcomes such as faster deliver
                     </li>
 
                     <li>
-                        <a href="contact.html" class="label-2 footer-link hover-underline">Contact</a>
+                        <a href="contact.html#contact" class="label-2 footer-link hover-underline">Contact</a>
                     </li>
 
                 </ul>

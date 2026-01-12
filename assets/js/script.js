@@ -175,18 +175,81 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Menu Navigation services dropdown 
+
+// Menu Navigation services dropdown (Desktop + Mobile)
 
 document.addEventListener("DOMContentLoaded", function () {
-  const dropdownToggle = document.querySelector(".dropdown-toggle");
-  const dropdownMenu = document.querySelector(".dropdown-menu");
 
-  if (!dropdownToggle || !dropdownMenu) return;
+  const megaMenu = document.querySelector(".mega-menu");
+  const toggle = document.querySelector(".mega-toggle");
+  const tabs = document.querySelectorAll(".mega-tab");
+  const panels = document.querySelectorAll(".mega-content");
 
-  dropdownToggle.addEventListener("click", function (e) {
+  if (!megaMenu || !toggle) return;
+
+  /* =========================
+     MOBILE: Toggle menu open
+     ========================= */
+  toggle.addEventListener("click", function () {
     if (window.innerWidth < 992) {
-      e.preventDefault();
-      dropdownMenu.classList.toggle("open");
+      megaMenu.classList.toggle("active");
+      toggle.setAttribute(
+        "aria-expanded",
+        megaMenu.classList.contains("active")
+      );
     }
   });
+
+  /* =========================
+     MOBILE: Switch panels on tap
+     ========================= */
+  tabs.forEach(tab => {
+    tab.addEventListener("click", function () {
+      if (window.innerWidth < 992) {
+        activateTab(tab);
+      }
+    });
+  });
+
+  /* =========================
+     DESKTOP: Switch panels on hover
+     ========================= */
+  tabs.forEach(tab => {
+    tab.addEventListener("mouseenter", function () {
+      if (window.innerWidth >= 992) {
+        activateTab(tab);
+      }
+    });
+  });
+
+  /* =========================
+     Shared function
+     ========================= */
+  function activateTab(activeTab) {
+  const targetId = activeTab.dataset.target;
+  const newPanel = document.getElementById(targetId);
+  const currentPanel = document.querySelector(".mega-content.active");
+
+  if (currentPanel === newPanel) return;
+
+  // Update tabs
+  tabs.forEach(t => t.classList.remove("active"));
+  activeTab.classList.add("active");
+
+  // Animate current panel out
+  if (currentPanel) {
+    currentPanel.classList.add("exit-left");
+
+    setTimeout(() => {
+      currentPanel.classList.remove("active", "exit-left");
+    }, 250);
+  }
+
+  // Animate new panel in
+  newPanel.classList.add("active");
+}
+
+
 });
+// MENU ANIMATION
+
