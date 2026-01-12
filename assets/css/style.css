@@ -2882,15 +2882,23 @@ textarea.input-field {
   top: 100%;
   left: 0;
   width: 640px;
-  background: var(--dark-crayola);
+  /* background: var(--dark-crayola); */
   border-radius: 16px;
   display: flex;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(12px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+  /* transform: translateY(12px); */
+  /* transition: opacity 0.25s ease, transform 0.25s ease; */
+  /* box-shadow: 0 25px 60px rgba(0,0,0,0.45); */
   z-index: 50;
+
+  background: linear-gradient(145deg,#0b1220,#0f1b2d);
+  border-radius: 20px;
+  transform: translateY(14px);
+   transition: opacity 0.35s ease, transform 0.35s ease;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(255, 215, 160, 0.08);
 }
 
 /* ✅ DESKTOP HOVER — THIS WAS BROKEN BEFORE */
@@ -2902,13 +2910,31 @@ textarea.input-field {
   }
 }
 
-.mega-left {
+/* .mega-left {
   width: 40%;
   padding: 20px;
   background: rgba(255,255,255,0.03);
+} */
+
+.mega-left {
+  width: 38%;
+  padding: 26px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.01)
+  );
+
+  border-right: 1px solid rgba(255, 215, 160, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.mega-tab {
+
+/* .mega-tab {
   background: none;
   border: none;
   color: var(--white);
@@ -2922,11 +2948,55 @@ textarea.input-field {
 .mega-tab:hover {
   background: rgba(255,255,255,0.08);
   color: var(--gold-crayola);
+} */
+
+.mega-tab {
+  background: transparent;
+  border: none;
+
+  color: #e6ebf2;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  padding: 12px 14px;
+  border-radius: 12px;
+
+  cursor: pointer;
+  text-align: left;
+
+  transition: all 0.25s ease;
 }
 
-.mega-right {
+.mega-tab:hover {
+  background: rgba(255, 215, 160, 0.08);
+  color: #f5d28b;
+}
+
+.mega-tab.active {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 215, 160, 0.18),
+    rgba(255, 215, 160, 0.05)
+  );
+
+  color: #ffd88a;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 215, 160, 0.25);
+}
+
+
+/* .mega-right {
   width: 60%;
   padding: 24px;
+} */
+
+.mega-right {
+  width: 62%;
+  padding: 28px 32px;
+
+  position: relative;
+  overflow: hidden;
 }
 
 .mega-content {
@@ -2939,7 +3009,7 @@ textarea.input-field {
   display: flex;
 }
 
-.mega-content a {
+/* .mega-content a {
   color: var(--white);
   font-size: 0.95rem;
   text-decoration: none;
@@ -2950,10 +3020,30 @@ textarea.input-field {
 .mega-content a:hover {
   color: var(--gold-crayola);
   transform: translateX(8px);
+} */
+
+.mega-content a {
+  color: #d6dde7;
+  font-size: 0.95rem;
+  font-weight: 400;
+
+  text-decoration: none;
+  padding: 10px 6px;
+
+  border-radius: 8px;
+
+  transition: all 0.25s ease;
 }
 
+.mega-content a:hover {
+  color: #ffd88a;
+  background: rgba(255, 215, 160, 0.08);
+  transform: translateX(6px);
+}
+
+
 /* MOBILE FIX */
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .mega-panel {
     position: static;
     width: 100%;
@@ -2978,7 +3068,39 @@ textarea.input-field {
   .mega-right {
     padding: 16px;
   }
+} */
+
+@media (max-width: 991px) {
+  .mega-panel {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    flex-direction: column;
+  }
+
+  .mega-menu.active .mega-panel {
+    display: flex;
+  }
+
+  .mega-left {
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 215, 160, 0.15);
+  }
+
+  .mega-right {
+    padding: 18px;
+  }
 }
+
+
 /* Menu Animation   */
 /* Right panel base */
 .mega-right {
@@ -2987,25 +3109,50 @@ textarea.input-field {
 }
 
 /* Panels */
-.mega-content {
+/* .mega-content {
   position: absolute;
   inset: 0;
   opacity: 0;
   transform: translateX(20px);
   transition: opacity 0.25s ease, transform 0.25s ease;
   pointer-events: none;
-}
+} */
 
 /* Active panel */
-.mega-content.active {
+/* .mega-content.active {
   position: relative;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+} */
+
+/* Exit animation */
+/* .mega-content.exit-left {
+  opacity: 0;
+  transform: translateX(-20px);
+} */
+
+.mega-content {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  transform: translateX(24px);
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease;
+
+  pointer-events: none;
+}
+
+.mega-content.active {
   opacity: 1;
   transform: translateX(0);
   pointer-events: auto;
 }
 
-/* Exit animation */
-.mega-content.exit-left {
+.mega-content.exiting {
   opacity: 0;
-  transform: translateX(-20px);
+  transform: translateX(-24px);
 }
