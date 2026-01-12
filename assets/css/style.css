@@ -2955,7 +2955,8 @@ textarea.input-field {
   border: none;
 
   color: #e6ebf2;
-  font-size: 0.95rem;
+  /* font-size: 0.95rem; */
+  font-size: 1.5rem;
   font-weight: 500;
 
   padding: 12px 14px;
@@ -3024,7 +3025,9 @@ textarea.input-field {
 
 .mega-content a {
   color: #d6dde7;
-  font-size: 0.95rem;
+  /* font-size: 0.95rem; */
+  font-size: 1.25rem;
+  
   font-weight: 400;
 
   text-decoration: none;
