@@ -1394,6 +1394,8 @@ body.nav-active {
 
 .menu .grid-list {
   margin-block-end: 50px;
+  grid-template-columns: 1fr !important;
+  gap: 22px;
 }
 
 .menu-card {
@@ -2699,7 +2701,7 @@ textarea.input-field {
   height: auto;
 }
 .swiper-slide {
-  background: #ddd;
+  /* background: #ddd; */
   height: 100px;
   display: flex;
   align-items: center;
@@ -2712,7 +2714,8 @@ textarea.input-field {
 
 /* Why supportaholic */
 /* Menu Card as Light Blue Box */
-.menu .grid-list li .menu-card {
+
+.menu .grid-list li .menu-card1 {
   background: #f5f9ff; /* very light blue */
   border-radius: 16px;
   padding: 22px 24px;
@@ -2722,6 +2725,7 @@ textarea.input-field {
   align-items: flex-start;
   transition: all 0.25s ease;
 }
+
 
 /* Hover effect (professional, subtle) */
 .menu .grid-list li .menu-card:hover {
@@ -3175,4 +3179,35 @@ textarea.input-field {
 .mega-content.exiting {
   opacity: 0;
   transform: translateX(-24px);
+}
+
+/* menu card changes  */
+
+/* Modern service row */
+.menu-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.01)
+  );
+
+  border-radius: 18px;
+  padding: 28px 32px;
+
+  display: flex;
+  align-items: center;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+
+  transition: all 0.3s ease;
+}
+
+/* Hover effect – subtle & premium */
+.menu-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(255, 215, 160, 0.25);
 }
