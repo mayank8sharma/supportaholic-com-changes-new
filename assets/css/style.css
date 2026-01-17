@@ -456,6 +456,23 @@ body.nav-active {
   margin-block-start: 5px;
 }
 
+.section-subtitle1 {
+  position: relative;
+  color: var(--light-crayola);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacing-2);
+  margin-block-end: 12px;
+}
+
+.section-subtitle1::after {
+  /* content: url('../images/separator.svg'); */
+  display: block;
+  width: 100px;
+  margin-inline: auto;
+  margin-block-start: 5px;
+}
+
 .btn {
   position: relative;
   color: var(--dark-crayola);
