@@ -43,6 +43,121 @@
     <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
     <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg">
 
+    <style>
+        .erp-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f4f9ff 100%);
+}
+
+/* HEADER */
+.erp-header {
+  text-align: center;
+  max-width: 950px;
+  margin: 0 auto 60px;
+}
+
+/* DASHBOARD */
+.erp-visual {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 90px;
+}
+
+.erp-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  max-width: 1100px;
+  padding: 40px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 26px;
+  box-shadow: 0 28px 70px rgba(0,81,168,0.18);
+  border: 1px solid rgba(0,102,204,0.12);
+}
+
+.erp-stat {
+  background: linear-gradient(135deg, #f7fbff, #eef4ff);
+  padding: 22px;
+  border-radius: 18px;
+  text-align: center;
+  border: 1px solid rgba(0,102,204,0.08);
+}
+
+.erp-stat.primary {
+  background: linear-gradient(135deg, #e8f2ff, #ffffff);
+}
+
+.erp-stat.wide {
+  grid-column: span 4;
+  padding: 30px;
+}
+
+.erp-stat h4 {
+  font-size: 1rem;
+  color: #0051a8;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 2.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.erp-stat span {
+  font-size: 0.85rem;
+  color: #6a6a8a;
+}
+
+.chart-label {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #7a7a8a;
+  margin-top: 12px;
+}
+
+/* CONTENT GRID */
+.erp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.erp-card {
+  background: rgba(255,255,255,0.95);
+  padding: 34px;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(0,81,168,0.12);
+}
+
+.erp-card.wide {
+  grid-column: span 3;
+}
+
+.erp-card.highlight {
+  background: linear-gradient(135deg, #f0f6ff, #ffffff);
+  border-left: 6px solid #0066cc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .erp-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .erp-stat.wide {
+    grid-column: span 2;
+  }
+  .erp-grid {
+    grid-template-columns: 1fr;
+  }
+  .erp-card.wide {
+    grid-column: span 1;
+  }
+}
+
+    </style>
+
 </head>
 
 <body id="top">
@@ -382,72 +497,119 @@
 
 
 
-            <section class="special-dish text-center" aria-labelledby="dish-label">
+           <section class="section erp-section" aria-labelledby="erp-label">
 
-                <div class="special-dish-banner">
-                    <img src="./assets/images/services/web-application-developmet.jpg" width="940" height="900" loading="lazy" alt="Web Application Development"
-                        class="img-cover">
-                </div>
+  <!-- HEADER -->
+  <div class="erp-header">
+    <h1 id="erp-label">ERP Services</h1>
+    <p>
+      Streamline operations, reduce manual work, and gain real-time visibility
+      with scalable ERP solutions designed for growing U.S. businesses.
+    </p>
+  </div>
 
-                <div class="special-dish-content bg-white-10">
-                    <div class="container">
-<!-- 
-                        <img src="./assets/images/badge-1.png" width="28" height="41" loading="lazy" alt="badge"
-                            class="abs-img"> -->
+  <!-- ERP DASHBOARD VISUAL -->
+  <div class="erp-visual">
+    <div class="erp-dashboard">
 
-                  
-                        <h2 class="headline-1 section-title">CRM & ERP Services</h2>
+      <div class="erp-stat primary">
+        <h4>Operational Efficiency</h4>
+        <div class="stat-value">+38%</div>
+        <span>Process Improvement</span>
+      </div>
 
+      <div class="erp-stat">
+        <h4>Manual Work Reduced</h4>
+        <div class="stat-value">-52%</div>
+        <span>Automation Impact</span>
+      </div>
 
-                        <p class="section-text">
-                      Disconnected systems reduce visibility and slow decision-making. Our CRM and ERP solutions centralize operations and improve efficiency.  </p>
+      <div class="erp-stat">
+        <h4>System Uptime</h4>
+        <div class="stat-value">99.2%</div>
+        <span>ERP Reliability</span>
+      </div>
 
-                  <hr>        
-                         <hr>
-                         <br>
-                           <p class="section-subtitle label-2"> What We Do </p>
-                          <p class="section-text">
-                           <ul><li>ERP and CRM implementation</li>
-                                <li>Customization and integration</li>
-                                <li>Data migration and automation</li>
-                                <li>Reporting and analytics optimization</li>
-                            </ul>
-                        </p><br>
-<hr><br>
-                      <p class="section-subtitle label-2"> How We Deliver
-                      
-                        <!-- <p class="section-text">  -->
-                            <p>   
-                            <ul style="list-style-type:disc;">
-                      <li>Process and workflow assessment</li>
+      <div class="erp-stat">
+        <h4>Reporting Speed</h4>
+        <div class="stat-value">4×</div>
+        <span>Faster Insights</span>
+      </div>
 
-                      <li>Platform configuration and integration</li>  
+      <div class="erp-stat wide">
+        <canvas id="erpFlowChart"></canvas>
+        <p class="chart-label">Finance → Operations → Inventory → Reporting</p>
+      </div>
 
-                      <li>User training and documentation</li>    
+    </div>
+  </div>
 
-                        <li>Continuous support and enhancement</li>    
-                                       </ul>                 
-<br>  </p></p>
-<hr><br>
-                             <p class="section-subtitle label-2">Business Outcomes</p>
-                             
-                    <p class="section-text">    
-                            <ul>
-                                <li>Real-time business insights</li>
-                                <li>Improved operational control</li>
-                                <li>Reduced manual effort</li>
-                                <li>Scalable enterprise platforms</li>
-                            </ul>
+  <!-- ERP CONTENT -->
+  <div class="erp-grid">
 
-                    </div>
-                </div>
+    <div class="erp-card wide">
+      <h2>Streamline Operations with Scalable ERP Solutions</h2>
+      <p>
+        We provide ERP services that help U.S. businesses connect finance,
+        operations, inventory, and reporting into one integrated system.
+      </p>
+      <p>
+        Our ERP solutions eliminate disconnected tools, reduce errors,
+        and provide accurate, real-time data to support confident decisions.
+      </p>
+    </div>
 
-                
-<!-- 
-                <img src="./assets/images/shape-9.png" width="351" height="462" loading="lazy" alt=""
-                    class="shape shape-2"> -->
+    <div class="erp-card">
+      <h3>What We Do</h3>
+      <ul>
+        <li>ERP consulting & system assessment</li>
+        <li>ERP setup & configuration</li>
+        <li>Workflow automation & reporting</li>
+        <li>Data migration & system integration</li>
+        <li>ERP customization & optimization</li>
+        <li>Ongoing support & maintenance</li>
+      </ul>
+    </div>
 
-            </section>
+    <div class="erp-card">
+      <h3>Who This Service Is For</h3>
+      <ul>
+        <li>Mid-sized & enterprise organizations</li>
+        <li>Businesses replacing legacy systems</li>
+        <li>Companies needing automation & reporting</li>
+        <li>Organizations scaling operations</li>
+        <li>Teams requiring long-term ERP support</li>
+      </ul>
+    </div>
+
+    <div class="erp-card">
+      <h3>How We Deliver ERP Projects</h3>
+      <ol>
+        <li>Discovery & process review</li>
+        <li>Solution design & architecture</li>
+        <li>ERP implementation & setup</li>
+        <li>Data migration & integrations</li>
+        <li>Testing, training & go-live</li>
+        <li>Ongoing optimization & support</li>
+      </ol>
+    </div>
+
+    <div class="erp-card wide highlight">
+      <h2>Why Choose Supportaholic for ERP</h2>
+      <ul>
+        <li>Business-focused ERP consulting</li>
+        <li>Integration-first ERP implementations</li>
+        <li>Clear project governance & transparency</li>
+        <li>Secure data handling & compliance awareness</li>
+        <li>Scalable systems built for long-term growth</li>
+        <li>Dedicated post-launch ERP support</li>
+      </ul>
+      <a href="contact.html" class="cta-btn">Schedule a Discovery Call</a>
+    </div>
+
+  </div>
+</section>
+
 
 
 
@@ -586,7 +748,55 @@
     - ionicon link
   -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script><script>
+const canvas = document.getElementById("erpFlowChart");
+const ctx = canvas.getContext("2d");
+
+function resizeERPChart() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = 120;
+}
+
+function drawERPFlow() {
+  resizeERPChart();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  const steps = ["Finance", "Operations", "Inventory", "Reporting"];
+  const spacing = canvas.width / (steps.length + 1);
+  const y = canvas.height / 2;
+
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = "#0066cc";
+
+  steps.forEach((step, i) => {
+    const x = spacing * (i + 1);
+
+    // line
+    if (i > 0) {
+      ctx.beginPath();
+      ctx.moveTo(x - spacing + 40, y);
+      ctx.lineTo(x - 40, y);
+      ctx.stroke();
+    }
+
+    // circle
+    ctx.beginPath();
+    ctx.arc(x, y, 14, 0, Math.PI * 2);
+    ctx.fillStyle = "#0099ff";
+    ctx.fill();
+
+    // label
+    ctx.fillStyle = "#0051a8";
+    ctx.font = "600 12px Segoe UI";
+    ctx.textAlign = "center";
+    ctx.fillText(step, x, y + 34);
+  });
+}
+
+window.addEventListener("resize", drawERPFlow);
+drawERPFlow();
+</script>
+
 
 </body>
 

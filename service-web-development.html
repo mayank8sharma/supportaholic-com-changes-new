@@ -40,6 +40,137 @@
     <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
     <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg">
 
+    <style>
+        .web-dev-section {
+  position: relative;
+}
+
+.web-dev-header {
+  max-width: 900px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.web-dev-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0051a8, #0066cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.web-dev-header p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #6a6a8a;
+}
+
+.web-dev-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 35px;
+}
+
+/* Cards */
+.web-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 35px;
+  border: 1px solid rgba(0,102,204,0.1);
+  box-shadow: 0 12px 40px rgba(0,81,168,0.15);
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.web-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #0066cc, #0099ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.web-card:hover::before {
+  transform: scaleX(1);
+}
+
+.web-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 55px rgba(0,81,168,0.25);
+}
+
+.web-card h2,
+.web-card h3 {
+  color: #0051a8;
+  margin-bottom: 15px;
+}
+
+.web-card p {
+  color: #5a5a7a;
+  line-height: 1.7;
+}
+
+.web-card ul,
+.web-card ol {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #5a5a7a;
+}
+
+.web-card li {
+  margin-bottom: 8px;
+}
+
+/* Wide cards */
+.web-card.wide {
+  grid-column: span 2;
+}
+
+.web-card.highlight {
+  background: linear-gradient(135deg, #f8fbff, #f0f6ff);
+}
+
+/* CTA */
+.web-cta {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 38px;
+  background: linear-gradient(135deg, #0066cc, #0051a8);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0,81,168,0.4);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .web-card.wide {
+    grid-column: span 1;
+  }
+
+  .web-dev-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+    </style>
 </head>
 
 <body id="top">
@@ -379,73 +510,110 @@
 
 
 
-            <section class="special-dish text-center" aria-labelledby="dish-label">
+         <section class="section web-dev-section" aria-labelledby="web-dev-label">
 
-                <div class="special-dish-banner">
-                    <img src="./assets/images/services/web-application-developmet.jpg" width="940" height="900" loading="lazy" alt="Web Application Development"
-                        class="img-cover">
-                </div>
+  <div class="web-dev-header">
+    <h1 id="web-dev-label">Web Development Services</h1>
+    <p>
+      Build secure, scalable, and business-focused web solutions designed to support
+      long-term growth, performance, and operational reliability.
+    </p>
+  </div>
+  
+  <div class="web-dev-grid">
 
-                <div class="special-dish-content bg-white-10">
-                    <div class="container">
-<!-- 
-                        <img src="./assets/images/badge-1.png" width="28" height="41" loading="lazy" alt="badge"
-                            class="abs-img"> -->
+    <!-- OVERVIEW -->
+    <div class="web-card wide">
+      <h2>Build Secure, Scalable & Business-Focused Web Solutions</h2>
+      <p>
+        In today’s digital-first world, having a strong website is essential for business success.
+        We provide professional web development services that help businesses build fast, secure,
+        and scalable websites and web applications aligned with real business goals.
+      </p>
+      <p>
+        Our solutions are easy to manage, future-ready, and designed to integrate seamlessly
+        with your ERP, CRM, and third-party systems.
+      </p>
+    </div>
 
-                  
-                        <h2 class="headline-1 section-title">Application & Website Development</h2>
+    <!-- WHAT WE DO -->
+    <div class="web-card">
+      <h3>What We Do</h3>
+      <ul>
+        <li>Custom website development</li>
+        <li>Business & enterprise web applications</li>
+        <li>Customer & partner portals</li>
+        <li>E-commerce platforms</li>
+        <li>CMS-based & custom-managed websites</li>
+        <li>Website upgrades & re-platforming</li>
+      </ul>
+    </div>
 
+    <!-- SERVICES -->
+    <div class="web-card">
+      <h3>Our Web Development Services</h3>
+      <ul>
+        <li><strong>Custom Website Development</strong> – Brand-aligned, scalable, high-performance websites</li>
+        <li><strong>Web Application Development</strong> – Secure business applications & automation</li>
+        <li><strong>eCommerce Development</strong> – Conversion-focused online stores</li>
+        <li><strong>CMS-Based Websites</strong> – Easy content management</li>
+        <li><strong>Website Redesign & Optimization</strong> – Speed, UX & mobile improvements</li>
+      </ul>
+    </div>
 
-                        <p class="section-text">
-                        Modern businesses need reliable, scalable applications to compete and grow. We build web and business applications that align with real operational requirements.   </p>
+    <!-- WHO WE SERVE -->
+    <div class="web-card">
+      <h3>Who We Serve</h3>
+      <ul>
+        <li>Mid-sized & enterprise businesses</li>
+        <li>Startups building MVPs or internal platforms</li>
+        <li>Organizations modernizing legacy systems</li>
+        <li>Companies needing secure & scalable web apps</li>
+        <li>Businesses integrating ERP, CRM & third-party tools</li>
+      </ul>
+    </div>
 
-                  <hr>        
-                         <hr>
-                         <br>
-                           <p class="section-subtitle label-2"> What We Do </p>
-                          <p class="section-text">
-                           <ul><li>Custom web and application development</li>
-                                <li>Legacy system modernization</li>
-                                <li>Application redesign and performance optimization</li>
-                                <li>API and third-party integrations</li>
-                            </ul>
-                        </p><br>
-<hr><br>
-                      <p class="section-subtitle label-2"> How We Deliver
-                      
-                        <!-- <p class="section-text">  -->
-                            <p>   
-                            <ul style="list-style-type:disc;">
-                      <li>Business requirement analysis</li>
+    <!-- DELIVERY PROCESS -->
+    <div class="web-card">
+      <h3>How We Deliver</h3>
+      <ol>
+        <li>Discovery & business requirement analysis</li>
+        <li>Solution design & technology selection</li>
+        <li>Secure development & integrations</li>
+        <li>Testing, performance & security checks</li>
+        <li>Deployment & ongoing support</li>
+      </ol>
+    </div>
 
-                      <li>Secure and scalable architecture design</li>  
+    <!-- TECHNOLOGY STACK -->
+    <div class="web-card">
+      <h3>Technologies We Use</h3>
+      <p><strong>Frontend:</strong> HTML, CSS, JavaScript, React, Angular</p>
+      <p><strong>Backend:</strong> PHP, Node.js, Python, .NET</p>
+      <p><strong>CMS:</strong> WordPress, Custom CMS</p>
+      <p><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</p>
+      <p><strong>Cloud & Hosting:</strong> AWS, Azure, secure cloud environments</p>
+    </div>
 
-                      <li>Agile development and testing</li>    
+    <!-- WHY CHOOSE -->
+    <div class="web-card wide highlight">
+      <h2>Why Choose Us for Web Development</h2>
+      <ul>
+        <li>Experienced web developers with enterprise expertise</li>
+        <li>Clean, scalable & secure code standards</li>
+        <li>Mobile-responsive & SEO-friendly development</li>
+        <li>Fast-loading, performance-optimized websites</li>
+        <li>Transparent communication & timely delivery</li>
+        <li>Long-term support & maintenance</li>
+      </ul>
+      <p class="web-cta">
+        We focus on building websites that support real business outcomes — not just visual appeal.
+      </p>
+      <a href="contact.html" class="cta-btn">Contact Us</a>
+    </div>
 
-                        <li>Deployment, monitoring, and ongoing support</li>    
-                                       </ul>                 
-<br>  </p></p>
-<hr><br>
-                             <p class="section-subtitle label-2">Business Outcomes</p>
-                             
-                    <p class="section-text">    
-                            <ul>
-                                <li>Faster application performance</li>
-                                <li>Improved user experience</li>
-                                <li>Lower maintenance and technical risk</li>
-                                <li>Scalable systems ready for growth</li>
-                            </ul>
-
-
-                    </div>
-                </div>
-
-                
-<!-- 
-                <img src="./assets/images/shape-9.png" width="351" height="462" loading="lazy" alt=""
-                    class="shape shape-2"> -->
-
-            </section>
+  </div>
+</section>
 
 
 
