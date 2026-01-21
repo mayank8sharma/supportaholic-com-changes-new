@@ -185,71 +185,38 @@ document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".mega-tab");
   const panels = document.querySelectorAll(".mega-content");
 
-  if (!megaMenu || !toggle) return;
+  function activateTab(tab) {
+    const target = tab.dataset.target;
 
-  /* =========================
-     MOBILE: Toggle menu open
-     ========================= */
-  toggle.addEventListener("click", function () {
+    tabs.forEach(t => t.classList.remove("active"));
+    panels.forEach(p => p.classList.remove("active"));
+
+    tab.classList.add("active");
+    document.getElementById(target).classList.add("active");
+  }
+
+  /* Desktop hover */
+  tabs.forEach(tab => {
+    tab.addEventListener("mouseenter", () => {
+      if (window.innerWidth >= 992) activateTab(tab);
+    });
+  });
+
+  /* Mobile click */
+  toggle.addEventListener("click", () => {
     if (window.innerWidth < 992) {
       megaMenu.classList.toggle("active");
-      toggle.setAttribute(
-        "aria-expanded",
-        megaMenu.classList.contains("active")
-      );
     }
   });
 
-  /* =========================
-     MOBILE: Switch panels on tap
-     ========================= */
   tabs.forEach(tab => {
-    tab.addEventListener("click", function () {
-      if (window.innerWidth < 992) {
-        activateTab(tab);
-      }
+    tab.addEventListener("click", () => {
+      if (window.innerWidth < 992) activateTab(tab);
     });
   });
-
-  /* =========================
-     DESKTOP: Switch panels on hover
-     ========================= */
-  tabs.forEach(tab => {
-    tab.addEventListener("mouseenter", function () {
-      if (window.innerWidth >= 992) {
-        activateTab(tab);
-      }
-    });
-  });
-
-  /* =========================
-     Shared function
-     ========================= */
-  function activateTab(activeTab) {
-  const targetId = activeTab.dataset.target;
-  const newPanel = document.getElementById(targetId);
-  const currentPanel = document.querySelector(".mega-content.active");
-
-  if (currentPanel === newPanel) return;
-
-  // Update tabs
-  tabs.forEach(t => t.classList.remove("active"));
-  activeTab.classList.add("active");
-
-  // Animate current panel out
-  if (currentPanel) {
-    currentPanel.classList.add("exit-left");
-
-    setTimeout(() => {
-      currentPanel.classList.remove("active", "exit-left");
-    }, 250);
-  }
-
-  // Animate new panel in
-  newPanel.classList.add("active");
-}
-
 
 });
+
+
 // MENU ANIMATION
 
