@@ -220,3 +220,119 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // MENU ANIMATION
 
+const canvas = document.getElementById("techCanvas");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+let mouse = { x: null, y: null, radius: 140 };
+
+/* ================= RESIZE (FIXED) ================= */
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+/* ================= MOUSE ================= */
+window.addEventListener("mousemove", e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+window.addEventListener("mouseleave", () => {
+  mouse.x = null;
+  mouse.y = null;
+});
+
+/* ================= BACKGROUND GRADIENT ================= */
+function drawBackground() {
+  const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+  gradient.addColorStop(0, "rgba(240,245,255,0.8)");
+  gradient.addColorStop(1, "rgba(255,255,255,1)");
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+/* ================= PARTICLE ================= */
+class Particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.vx = (Math.random() - 0.5) * 0.6;
+    this.vy = (Math.random() - 0.5) * 0.6;
+    this.size = Math.random() * 2 + 1;
+    this.density = Math.random() * 30 + 10;
+  }
+
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+    if (mouse.x !== null && mouse.y !== null) {
+      const dx = this.x - mouse.x;
+      const dy = this.y - mouse.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < mouse.radius) {
+        const force = (mouse.radius - distance) / mouse.radius;
+        const angle = Math.atan2(dy, dx);
+        this.x += Math.cos(angle) * force * this.density * 0.4;
+        this.y += Math.sin(angle) * force * this.density * 0.4;
+      }
+    }
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(0,102,204,0.45)";
+    ctx.fill();
+  }
+}
+
+/* ================= INIT ================= */
+function initParticles() {
+  particles = [];
+  const count = Math.floor((canvas.width * canvas.height) / 12000);
+  for (let i = 0; i < count; i++) {
+    particles.push(new Particle());
+  }
+}
+initParticles();
+
+/* ================= CONNECTIONS ================= */
+function connectParticles() {
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < 120) {
+        ctx.strokeStyle = `rgba(0,102,204,${0.15 - dist / 1200})`;
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+/* ================= ANIMATE ================= */
+function animate() {
+  drawBackground();
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+  connectParticles();
+  requestAnimationFrame(animate);
+}
+
+animate();
