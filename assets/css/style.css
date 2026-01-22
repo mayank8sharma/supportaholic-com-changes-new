@@ -3343,3 +3343,249 @@ textarea.input-field {
     font-size: 2.4rem;
   }
 }
+
+
+/* Homepage content of what we do  */
+
+.what-we-do .section-intro {
+  max-width: 900px;
+  margin: 0 auto 80px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 40px;
+  border: 1px solid rgba(0, 102, 204, 0.12);
+  box-shadow: 0 20px 45px rgba(0, 81, 168, 0.15);
+  transition: transform 0.3s ease;
+   position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-title {
+  font-size: 2rem;
+  color: var(--dark-crayola);
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.service-label {
+  font-weight: 600;
+  color: var(--dark-crayola);
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.service-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--davys-grey);
+}
+
+.service-list {
+  margin-top: 8px;
+  display: grid;
+  gap: 6px;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--davys-grey);
+}
+
+.service-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gold-crayola);
+}
+/* Bottom animated border */
+.service-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--dark-crayola),
+    var(--gold-crayola)
+  );
+  transition: width 0.35s ease;
+}
+
+/* Activate on hover */
+.service-card:hover::after {
+  width: 100%;
+}
+
+/* Service detail link */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 22px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--dark-crayola);
+  text-decoration: none;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+/* Arrow animation */
+.service-link .arrow {
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.service-link:hover {
+  color: var(--gold-crayola);
+  gap: 12px;
+}
+
+.service-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+
+
+@media (max-width: 768px) {
+  .service-card {
+    padding: 30px;
+  }
+}
+
+.how-we-work .section-intro {
+  max-width: 900px;
+  margin: 0 auto 70px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.process-step {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  border: 1px solid rgba(0, 102, 204, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 81, 168, 0.14);
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-6px);
+}
+
+.step-number {
+  display: inline-block;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--gold-crayola);
+  margin-bottom: 14px;
+}
+
+.process-step h3 {
+  font-size: 1.5rem;
+  color: var(--dark-crayola);
+  margin-bottom: 10px;
+}
+
+.process-step p {
+  font-size: 1rem;
+  color: var(--davys-grey);
+  line-height: 1.6;
+}
+
+
+/* why supportaholic  */
+
+.why-supportaholic .section-intro {
+  max-width: 900px;
+  margin: 0 auto 70px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 50px;
+}
+
+.why-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 45px;
+  border: 1px solid rgba(0, 102, 204, 0.12);
+  box-shadow: 0 22px 50px rgba(0, 81, 168, 0.15);
+}
+
+.why-card h3 {
+  font-size: 1.7rem;
+  color: var(--dark-crayola);
+  margin-bottom: 18px;
+}
+
+.why-card ul {
+  display: grid;
+  gap: 10px;
+}
+
+.why-card li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--davys-grey);
+}
+
+.why-card li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--gold-crayola);
+  font-weight: 600;
+}
+
+/* final CTA Button */
+
+.final-cta {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 204, 0.08),
+    rgba(255, 255, 255, 0.9)
+  );
+}
+
+.final-cta .container {
+  max-width: 900px;
+}
+
+.final-cta .section-text {
+  max-width: 700px;
+  margin: 20px auto 40px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
