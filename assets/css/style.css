@@ -3247,7 +3247,7 @@ textarea.input-field {
 }
 
 /* HERO SECTION */
-.hero-section {
+/* .hero-section {
   position: relative;
   z-index: 1;
   min-height: 100vh;
@@ -3255,10 +3255,10 @@ textarea.input-field {
   align-items: center;
   justify-content: center;
   padding: 120px 5%;
-}
+} */
 
 /* HERO CARD (GLASS UI) */
-.hero-card {
+/* .hero-card {
   max-width: 900px;
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(14px);
@@ -3267,42 +3267,43 @@ textarea.input-field {
   text-align: center;
   box-shadow: 0 30px 60px rgba(0, 81, 168, 0.18);
   border: 1px solid rgba(0, 102, 204, 0.12);
-}
+} */
 
 /* TITLE */
-.hero-title {
+/* .hero-title {
   font-size: 3.2rem;
   color: var(--dark-crayola);
   margin-bottom: 24px;
   line-height: 1.2;
-}
+} */
 
 /* TEXT */
-.hero-text {
+/* .hero-text {
   font-size: 1.15rem;
   line-height: 1.8;
   color: var(--davys-grey);
   margin-bottom: 18px;
 }
-
+ */
 /* SERVICES LINE */
-.hero-services {
+/* .hero-services {
   margin-top: 28px;
   font-size: 1rem;
   font-weight: 600;
   color: var(--dark-crayola);
-}
+} */
 
 /* ACTIONS */
-.hero-actions {
+/* .hero-actions {
   margin-top: 40px;
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-}
+} */
 
 /* BUTTONS */
+/* remvoe belwo sevtion for hero button overall impact */
 .btn-primary {
   padding: 16px 40px;
   background: linear-gradient(135deg, #0066cc, #0051a8);
